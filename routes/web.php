@@ -18,3 +18,31 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+
+Route::get('/dependencias', function () {
+    return view('admin.dependencias.index');
+});
+
+//Routas para dependencias
+Route::resource('admin/dependencias', 'DependenciasController');
+
+Route::get('admin/dependencias',[
+    'uses' => 'DependenciasController@index',
+    'as' => 'admin.dependencias.index'
+]);
+
+Route::get('dependencias/edit/{dependencias}', [
+    'uses' => 'DependenciasController@edit',
+    'as' => 'admin.dependencias.edit'
+]);
+
+Route::put('dependencias/update/{dependencias}', [
+    'uses' => 'ADependenciasController@update',
+    'as' => 'admin.dependencias.update'
+]);
+
+Route::delete('dependencias/delete/{dependencias}', [
+    'uses' => 'DependenciasController@destroy',
+    'as' => 'admin.dependencias.destroy'
+]);
