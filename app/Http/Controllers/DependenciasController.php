@@ -18,5 +18,38 @@ class DependenciasController extends Controller
        return view('admin.dependencias.index', compact('dependencia'));
     }
 
+     public function create(){
+
+        return view('admin.dependencias.create');
+    }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+          'dependencia' => 'required',
+          'uuid' => 'required',
+        ]);
+        
+        $dependencias = Dependencias::create([
+            'dependencia' => $request->get('name'),
+            'uuid' =>$request->get('contact'),
+           
+        ]);
+         $dependencias = Dependencias::all();
+        return view('admin.dependencias.index', compact('dependencias'));
+    }
+
+
+    public function edit(Dependencias $dependencia)
+    {
+        return view('admin.dependencias.edit', compact('dependencias'));
+    }
+
+ public function destroy(Dependencias $dependencia)
+    {
+        $deleted = $info->delete();
+        $dependencia = Dependencias::all();
+        return view('admin.dependencias.index', compact('dependencia'));
+    }
     
 }

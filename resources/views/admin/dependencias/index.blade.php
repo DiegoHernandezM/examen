@@ -19,13 +19,18 @@
 			<tbody>
 			<?php foreach ($dependencia as $info): ?>
 				<tr>
-					<td>{{ $info-> name}}</td>
+					<td>{{ $info-> dependencia}}</td>
 					<td>{{ $info-> uuid}}</td>
 					<td>
-						<a href="" class="btn btn-primary">Modificar</a>
+						<a href="route('admin.dependencias.edit" class="btn btn-primary">Modificar</a>
 					</td>
 					<td>
-						
+						{!! Form::open(['route' => ['admin.providers.destroy', $providers]]) !!}
+        								<input type="hidden" name="_method" value="DELETE">
+        								<button onClick="return confirm('Eliminar registro?')" class="btn btn-danger">
+        									Eliminar
+        								</button>
+        							{!! Form::close() !!}
 					</td>
 				</tr>
 				<?php endforeach ?>
@@ -33,6 +38,7 @@
 		</table>
 
 	</div>
+	 <?php echo $dependencia->render(); ?>
 	</div>
 </div>
 
