@@ -26,7 +26,6 @@ class DependenciasController extends Controller
     public function store(Request $request)
     {
         
-       // dd(request('nombre_dep'))
        $dependencia = Dependencias::create([
             'dependencia' => $request->get('nombre_dep'),
             'uuid' =>$request->get('uuid')
@@ -37,8 +36,7 @@ class DependenciasController extends Controller
     }
 
  	public function show(Dependencias $dependencias)
-    {
-      
+    {      
           $dependencia = Dependencias::all();
         return view('admin.dependencias.index', compact('dependencias'));
         
@@ -46,7 +44,7 @@ class DependenciasController extends Controller
 
     public function edit(Dependencias $dependencia)
     {
-        return view('admin.dependencias.edit', compact('dependencias'));
+        return view('admin.dependencias.edit', compact('dependencia'));
     }
 
      public function update(Request $request, Dependencias $dependencias)

@@ -32,7 +32,7 @@ Route::get('admin/dependencias',[
     'as' => 'admin.dependencias.index'
 ]);
 
-Route::get('dependencias/edit/{dependencias}', [
+Route::get('dependencias/edit/{dependencia}', [
     'uses' => 'DependenciasController@edit',
     'as' => 'admin.dependencias.edit'
 ]);
