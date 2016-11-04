@@ -5,7 +5,7 @@
         <div class="page-header">
             <h1>
                 
-                Dependenci <small>[Agregar dependencia]</small>
+                Dependencias <small>[Agregar dependencia]</small>
             </h1>
         </div>
 
@@ -16,7 +16,7 @@
                    
                     
                     
-                    {!! Form::open(['action' => 'DependenciasController@store']) !!}
+                    {!! Form::open(['route' => 'admin.dependencias.store']) !!}
 
         
                         <div class="form-horizontal">
@@ -24,7 +24,7 @@
                             
                             {!! 
                                 Form::text(
-                                    'name', 
+                                    'nombre_dep', 
                                     null, 
                                     array(
                                         'class'=>'form-control',
@@ -42,7 +42,8 @@
                            			'uuid',
                            			 null, 
                            			 array(
-                           			 		'class'=>'form-control'
+                           			 		'class'=>'form-control',
+                           			 		'placeholder' => 'Ingresa el UUID...'
                            			 	)
                            			)
                            	!!}
@@ -52,7 +53,7 @@
                         
                         <div class="form-group">
                             {!! Form::submit('Guardar', array('class'=>'btn btn-primary')) !!}
-                            <a href="{{ url('admin/providers/index') }}" class="btn btn-warning">Cancelar</a>
+                            <a href="{{ route('admin.dependencias.index') }}" class="btn btn-warning">Cancelar</a>
                         </div>
                     
                     {!! Form::close() !!}

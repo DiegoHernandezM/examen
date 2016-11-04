@@ -32,9 +32,14 @@ Route::get('admin/dependencias',[
     'as' => 'admin.dependencias.index'
 ]);
 
-Route::get('dependencias/edit/{info}', [
+Route::get('dependencias/edit/{dependencias}', [
     'uses' => 'DependenciasController@edit',
     'as' => 'admin.dependencias.edit'
+]);
+
+Route::post('dependencias/store', [
+    'uses' => 'DependenciasController@store',
+    'as' => 'admin.dependencias.store'
 ]);
 
 Route::put('dependencias/update/{dependencias}', [
@@ -42,7 +47,7 @@ Route::put('dependencias/update/{dependencias}', [
     'as' => 'admin.dependencias.update'
 ]);
 
-Route::delete('dependencias/delete/{info}', [
+Route::delete('dependencias/delete/{dependencia}', [
     'uses' => 'DependenciasController@destroy',
     'as' => 'admin.dependencias.destroy'
 ]);

@@ -4,7 +4,15 @@
 	<div class="page-header">
 		<h1>Dependencias 
 		<a href="{{ url('admin/dependencias/create')}}" ">Agregar dependencia</a>
-            
+
+            <form href="{{route('admin.dependencias.index')}}" class="navbar-form navbar-left pull-right" role="search"  method="GET">
+                    <div class="form-group">
+                        <input class="form-control" name="name" type="text" placeholder="Ingresa la dependencia" >
+                    </div>
+                    <button type="submit" class="btn btn-default">Buscar</button>
+                </form>
+
+
 		</h1>
 	</div>
 	<div class="page">
@@ -22,10 +30,10 @@
 					<td>{{ $info-> dependencia}}</td>
 					<td>{{ $info-> uuid}}</td>
 					<td>
-						<a href="route('admin.dependencias.edit" class="btn btn-primary">Modificar</a>
+						<a href="{{ route('admin.dependencias.edit', $info) }}" class="btn btn-primary">Modificar</a>
 					</td>
 					<td>
-						{!! Form::open(['route' => ['admin.providers.destroy', $providers]]) !!}
+						{!! Form::open(['route' => ['admin.dependencias.destroy', $info]]) !!}
         								<input type="hidden" name="_method" value="DELETE">
         								<button onClick="return confirm('Eliminar registro?')" class="btn btn-danger">
         									Eliminar

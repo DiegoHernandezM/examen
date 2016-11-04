@@ -12,6 +12,12 @@ class Dependencias extends Model
 
     public $timestamps = false;
 
-    
+    public function scopeName($query, $name){
+        if(trim($name) !=''){
+            $query->where(\DB::raw("CONCAT( dependencia, '', uuid)"),"LIKE","%$name%");
+        }
+    }
+
 }
+
 
