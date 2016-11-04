@@ -30,7 +30,7 @@
 					<td>{{ $info-> dependencia}}</td>
 					<td>{{ $info-> uuid}}</td>
 					<td>
-						<a href="{{ route('admin.dependencias.edit', $dependencia) }}" class="btn btn-primary">Modificar</a>
+						<a href="{{ route('admin.dependencias.edit', $info) }}" class="btn btn-primary">Modificar</a>
 					</td>
 					<td>
 						{!! Form::open(['route' => ['admin.dependencias.destroy', $info]]) !!}

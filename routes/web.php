@@ -36,7 +36,7 @@ Route::get('admin/dependencias',[
     'as' => 'admin.dependencias.index'
 ]);
 
-Route::get('dependencias/edit/{dependencia}', [
+Route::get('dependencias/edit/{dependencias}', [
     'uses' => 'DependenciasController@edit',
     'as' => 'admin.dependencias.edit'
 ]);
@@ -47,7 +47,7 @@ Route::post('dependencias/store', [
 ]);
 
 Route::put('dependencias/update/{dependencias}', [
-    'uses' => 'ADependenciasController@update',
+    'uses' => 'DependenciasControllerr@update',
     'as' => 'admin.dependencias.update'
 ]);
 

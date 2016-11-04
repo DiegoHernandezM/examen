@@ -14,9 +14,7 @@
                 
                 <div class="page">                   
                    
-                    
-                    
-                    {!! Form::open($dependencias,['route' => 'admin.dependencias.update', $dependencias]) !!}
+                    {!! Form::model($dependencias, array('route' => array('admin.dependencias.update', $dependencias))) !!}
 
         
                         <div class="form-horizontal">
@@ -52,7 +50,7 @@
                         
                         
                         <div class="form-group">
-                            {!! Form::submit('Guardar', array('class'=>'btn btn-primary')) !!}
+                            {!! Form::submit('Actualizar', array('class'=>'btn btn-primary')) !!}
                             <a href="{{ route('admin.dependencias.index') }}" class="btn btn-warning">Cancelar</a>
                         </div>
                     

@@ -41,29 +41,22 @@ class DependenciasController extends Controller
  	public function show(Dependencias $dependencias)
     {      
           $dependencia = Dependencias::all();
-        return view('admin.dependencias.index', compact('dependencias'));
+         return redirect()->route('admin.dependencias.index', compact('dependencia')); 
         
     }
 
-    public function edit(Dependencias $dependencia)
+    public function edit(Dependencias $dependencias)
     {
-        return view('admin.dependencias.edit', compact('dependencia'));
+        return view('admin.dependencias.edit', compact('dependencias'));
     }
 
      public function update(Request $request, Dependencias $dependencias)
     {
-        $this->validate($request, [
-          'dependencia' => 'required',
-          'uuid' => 'required',
-         
-        ]);
-        $dependencias->fill($request->all());
-           
-        $updated = $dependencias->save();
         
-         $dependencias = Dependencias::all();
-        //dd($provider);
-        return view('admin.providers.index', compact('dependencias'));
+        $dependencias->fill($request->all());           
+        $updated = $dependencias->save();        
+        $dependencias = Dependencias::orderBy('id', 'desc')->paginate(5);
+        return redirect()->route('admin.dependencias.index');
     }
 
 
