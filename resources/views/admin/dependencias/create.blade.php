@@ -16,7 +16,7 @@
                    
                     
                     
-                    {!! Form::open(['route' => 'admin.dependencias.store']) !!}
+                    {!! Form::open(['action' => 'DependenciasController@store']) !!}
 
         
                         <div class="form-horizontal">

@@ -9,6 +9,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Dependencias;
 
+
 class DependenciasController extends Controller
 {
      
@@ -25,6 +26,11 @@ class DependenciasController extends Controller
 
     public function store(Request $request)
     {
+        //return $request->all();
+       $this->validate($request, [
+          'dependencia' => 'required',
+          'uuid' => 'required',
+        ]);
         
        $dependencia = Dependencias::create([
             'dependencia' => $request->get('nombre_dep'),
@@ -32,7 +38,7 @@ class DependenciasController extends Controller
 
         ]);
          $dependencias = Dependencias::all();
-        return view('admin.dependencias.index', compact('dependencia'));
+       return redirect()->route('admin.dependencias.index'); 
     }
 
  	public function show(Dependencias $dependencias)
@@ -67,8 +73,8 @@ class DependenciasController extends Controller
  public function destroy(Dependencias $dependencia)
     {
         $deleted = $dependencia->delete();
-        $dependencia = Dependencias::all();
-        return view('admin.dependencias.index', compact('dependencia'));
+        $dependencia = Dependencias::orderBy('id', 'desc')->paginate(5);
+        return redirect()->route('admin.dependencias.index', compact('dependencia')); 
     }
     
 }

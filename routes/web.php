@@ -25,6 +25,10 @@ Route::get('/dependencias', function () {
 });
 
 //Routas para dependencias
+Route::bind('dependencia', function($dependencias){
+    return App\Dependencias::find($dependencias);
+});
+
 Route::resource('admin/dependencias', 'DependenciasController');
 
 Route::get('admin/dependencias',[

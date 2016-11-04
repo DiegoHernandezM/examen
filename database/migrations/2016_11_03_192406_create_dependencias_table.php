@@ -16,7 +16,7 @@ class CreateDependenciasTable extends Migration
          Schema::create('dependencias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('dependencia',255);
-            $table->string('uuid',255);
+            $table->string('uuid')->unique();
             
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAutoridadesTable extends Migration
+class CreateAutoritiessTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,19 +15,16 @@ class CreateAutoridadesTable extends Migration
     {
          Schema::create('autoridades', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('ap_paterno');
-            $table->string('ap_materno');
-            $table->string('nacimiento');
+            $table->string('nombre',255);
+            $table->string('ap_paterno',255);
+            $table->string('ap_materno',255);
             $table->string('email')->unique();
-            $table->foreign('dependencias_id')
+            $table->integer('dependencia_id')->unsigned();
+            $table->foreign('dependencia_id')
                   ->references('id')
                   ->on('dependencias')
-                  ->onDelete('cascade'); 
-            $table->string('uuid',255); 
-                  
-
-            //$table->timestamps();
+                  ->onDelete('cascade');
+            $table->timestamps();            
         });
     }
 
@@ -38,6 +35,6 @@ class CreateAutoridadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('autoridades');
+         Schema::dropIfExists('autoridades');
     }
 }
