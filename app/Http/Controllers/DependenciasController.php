@@ -27,10 +27,7 @@ class DependenciasController extends Controller
     public function store(Request $request)
     {
         //return $request->all();
-       $this->validate($request, [
-          'dependencia' => 'required',
-          'uuid' => 'required',
-        ]);
+       
         
        $dependencia = Dependencias::create([
             'dependencia' => $request->get('nombre_dep'),

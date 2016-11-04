@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dependencias extends Model
 {
-  protected $table = 'dependencias';
+  	protected $table = 'dependencias';
 
-    protected $fillable = ['name', 'uuid'];
+    protected $fillable = ['dependencia', 'uuid'];
 
     public $timestamps = false;
 
