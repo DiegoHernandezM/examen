@@ -39,25 +39,41 @@ class AutoridadesController extends Controller
         return redirect()->route('admin.autoridades.index');
     }    
 
-     public function show(Autoridades $autoridades)
+     public function show(Autoridades $autoridad)
     {
-    	$autoridades = Autoridades::all();
-        return redirect()->route('admin.autoridades.index', compact('autoridades'));
+    	$autoridad = Autoridades::all();
+        return redirect()->route('admin.autoridades.index', compact('autoridad'));
     }
 
-    public function edit(Autoridades $autoridad)
+    /*public function edit(Autoridades $autoridades)
     {
-    	 $dependencia = Dependencias::orderBy('id', 'desc')->pluck('dependencia', 'id');
-         return view('admin.autoridades.edit', compact('dependencia', 'autoridad'));
+    	 //$dependencia = Dependencias::orderBy('id', 'desc')->pluck('dependencia', 'id');
+         return view('admin.autoridades.edit', compact( 'autoridades'));
     }
 
      public function update(Request $request, Autoridades $autoridad)
     {
         $autoridad->fill($request->all());
         $updated = $autoridad->save();
-        return redirect()->route('admin.autoridades.index');
+        return redirect()->route('admin.autoridades.index', compact('autoridad'));
 
+    }*/
+    public function edit(Autoridades $autoridades)
+    {
+        $dependencia = Dependencias::orderBy('id', 'desc')->pluck('dependencia', 'id');
+        return view('admin.autoridades.edit', compact('dependencia','autoridades'));
     }
+
+     public function update(Request $request, Autoridades $autoridades)
+    {         
+        
+        $autoridades->fill($request->all());
+
+        $updated = $autoridades->save();        
+        $autoridades = Autoridades::orderBy('id', 'desc')->paginate(5);
+        return redirect()->route('admin.autoridades.index', compact('autoridades'));
+    }
+
 
     public function destroy(Autoridades $autoridad)
     {

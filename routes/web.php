@@ -84,11 +84,11 @@ Route::delete('autoridades/delete/{autoridad}', [
     'as' => 'admin.autoridades.destroy'
 ]);
 
-Route::get('autoridades/edit/{autoridad}', [
+Route::get('autoridades/edit/{autoridades}', [
     'uses' => 'AutoridadesController@edit',
     'as' => 'admin.autoridades.edit'
 ]);
-Route::put('autoridades/update/{autoridades}', [
+Route::put('autoridades/update/{autoridad}', [
     'uses' => 'AutoridadesController@update',
     'as' => 'admin.autoridades.update'
 ]);

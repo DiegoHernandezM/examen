@@ -13,7 +13,7 @@
                 
                 <div class="page">                   
                    
-                    {!! Form::model($autoridad, array('route' => array('admin.autoridades.update', $autoridad))) !!}
+                    {!! Form::model($autoridades, array('route' => array('admin.autoridades.update', $autoridades))) !!}
 
                         <input type="hidden" name="_method" value="PUT">
                         <div class="form-group">
