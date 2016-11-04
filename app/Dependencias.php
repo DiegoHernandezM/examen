@@ -18,6 +18,12 @@ class Dependencias extends Model
         }
     }
 
+     public function autoridades()
+    {
+        return $this->hasMany('App\Autoridades');
+    }
 }
+
+
 
 

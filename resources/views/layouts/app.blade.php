@@ -38,7 +38,7 @@
                     <a class="navbar-brand" href="{{ url('/') }}">
                         Inicio
                     </a>
-                     <a class="navbar-brand" href="{{ url('administracion') }}">
+                     <a class="navbar-brand" href="{{ route('admin.autoridades.index') }}">
                         Autoridades
                     </a>
                      <a class="navbar-brand" href="{{ route('admin.dependencias.index') }}">

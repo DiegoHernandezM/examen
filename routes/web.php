@@ -20,11 +20,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 
+//Rutas para dependencias
+
 Route::get('/dependencias', function () {
     return view('admin.dependencias.index');
 });
 
-//Routas para dependencias
 Route::bind('dependencia', function($dependencias){
     return App\Dependencias::find($dependencias);
 });
@@ -54,4 +55,40 @@ Route::put('dependencias/update/{dependencias}', [
 Route::delete('dependencias/delete/{dependencia}', [
     'uses' => 'DependenciasController@destroy',
     'as' => 'admin.dependencias.destroy'
+]);
+
+//Rutas para autoridades
+
+Route::get('/autoridades', function () {
+    return view('admin.autoridades.index');
+});
+
+Route::bind('autoridad', function($autoridades){
+    return App\Autoridades::find($autoridades);
+});
+
+Route::resource('admin/autoridades', 'AutoridadesController');
+
+Route::get('admin/autoridades',[
+    'uses' => 'AutoridadesController@index',
+    'as' => 'admin.autoridades.index'
+]);
+
+Route::post('autoridades/store', [
+    'uses' => 'AutoridadesController@store',
+    'as' => 'admin.autoridades.store'
+]);
+
+Route::delete('autoridades/delete/{autoridad}', [
+    'uses' => 'AutoridadesController@destroy',
+    'as' => 'admin.autoridades.destroy'
+]);
+
+Route::get('autoridades/edit/{autoridades}', [
+    'uses' => 'AutoridadesController@edit',
+    'as' => 'admin.autoridades.edit'
+]);
+Route::put('autoridades/update/{autoridades}', [
+    'uses' => 'AutoridadesController@update',
+    'as' => 'admin.autoridades.update'
 ]);

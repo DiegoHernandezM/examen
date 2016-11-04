@@ -38,7 +38,7 @@
         								<button onClick="return confirm('Eliminar registro?')" class="btn btn-danger">
         									Eliminar
         								</button>
-        							{!! Form::close() !!}
+        				{!! Form::close() !!}
 					</td>
 				</tr>
 				<?php endforeach ?>
