@@ -5,7 +5,7 @@
         <div class="page-header">
             <h1>
                 
-                Dependencias <small>[Editar dependencia]</small>
+                Dependencias <small>Editar dependencia</small>
             </h1>
         </div>
 
@@ -14,8 +14,8 @@
                 
                 <div class="page">                   
                    
-                    {!! Form::model($dependencias, array('route' => array('admin.dependencias.update', $dependencias))) !!}
-
+                    {!! Form::model($dependencias, array('route' => array('admin.dependencias.update', $dependencias) )) !!}
+                        <input type="hidden" name="_method" value="PUT">
         
                         <div class="form-horizontal">
                             <label for="name">Dependencia:</label>

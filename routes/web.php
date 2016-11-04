@@ -48,7 +48,7 @@ Route::post('dependencias/store', [
 ]);
 
 Route::put('dependencias/update/{dependencias}', [
-    'uses' => 'DependenciasControllerr@update',
+    'uses' => 'DependenciasController@update',
     'as' => 'admin.dependencias.update'
 ]);
 
@@ -84,7 +84,7 @@ Route::delete('autoridades/delete/{autoridad}', [
     'as' => 'admin.autoridades.destroy'
 ]);
 
-Route::get('autoridades/edit/{autoridades}', [
+Route::get('autoridades/edit/{autoridad}', [
     'uses' => 'AutoridadesController@edit',
     'as' => 'admin.autoridades.edit'
 ]);

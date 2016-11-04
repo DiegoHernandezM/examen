@@ -51,12 +51,13 @@ class DependenciasController extends Controller
     }
 
      public function update(Request $request, Dependencias $dependencias)
-    {
+    {         
         
-        $dependencias->fill($request->all());           
+        $dependencias->fill($request->all());
+
         $updated = $dependencias->save();        
         $dependencias = Dependencias::orderBy('id', 'desc')->paginate(5);
-        return redirect()->route('admin.dependencias.index');
+        return redirect()->route('admin.dependencias.index', compact('dependencias'));
     }
 
 

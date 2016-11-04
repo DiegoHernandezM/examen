@@ -4,8 +4,7 @@
 <div class="container text-center">
         <div class="page-header">
             <h1>
-                
-                Autoridades [Editar autoridad]
+                Autoridades Editar autoridad
             </h1>
         </div>
 
@@ -14,7 +13,7 @@
                 
                 <div class="page">                   
                    
-                    {!! Form::model($autoridades, array('route' => array('admin.autoridades.update', $autoridades))) !!}
+                    {!! Form::model($autoridad, array('route' => array('admin.autoridades.update', $autoridad))) !!}
 
                         <input type="hidden" name="_method" value="PUT">
                         <div class="form-group">
