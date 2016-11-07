@@ -34,7 +34,7 @@
 					<td>{{ $info-> ap_paterno}}</td>
 					<th>{{ $info-> ap_materno}}</th>
                     <th>{{ $info-> email}}</th>
-                    <th>{{ $info-> dependencia_id }}</th>
+                    <th>{{ $info-> dependencia -> dependencia }}</th>
 					<td>
 						<a href="{{route('admin.autoridades.edit', $info)}}" class="btn btn-primary">Modificar</a>
 					</td>
