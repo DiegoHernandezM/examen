@@ -38,6 +38,9 @@
                     <a class="navbar-brand" href="{{ url('/') }}">
                         Inicio
                     </a>
+                     <a class="navbar-brand" href="{{ url('home') }}">
+                        Referencias API
+                    </a>
                      <a class="navbar-brand" href="{{ route('admin.autoridades.index') }}">
                         Autoridades
                     </a>
