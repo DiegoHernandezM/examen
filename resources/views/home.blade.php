@@ -31,7 +31,7 @@
                 </tr>
                  <tr>
                     <td>dependencia/{uuid}/</td>
-                    <td>NINGUNO</td>
+                    <td>uuid (texto)</td>
                     <td>GET</td>
                     <td>JSON</td>
                     <td>Trae el registro asociado al parametro de dependencia</td>
@@ -39,7 +39,7 @@
                 </tr>
                  <tr>
                     <td>/admin/dependencias/create</td>
-                    <td>uuid (texto)</td>
+                    <td>NINGUNO</td>
                     <td>POST</td>
                     <td>JSON</td>
                     <td>Guarda una nueva dependencia</td>
