@@ -25,17 +25,19 @@ class DependenciasController extends Controller
     }
 
     public function store(Request $request)
-    {
-        //return $request->all();
-       
-        
+    {        
        $dependencia = Dependencias::create([
             'dependencia' => $request->get('nombre_dep'),
             'uuid' =>$request->get('uuid')
 
         ]);
          $dependencias = Dependencias::all();
-       return redirect()->route('admin.dependencias.index'); 
+      // return redirect()->route('admin.dependencias.index'); 
+         return response()->json([
+                'Nueva dependencia' => $dependencia
+            ]);
+
+
     }
 
  	public function show(Dependencias $dependencias)
