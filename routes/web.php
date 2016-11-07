@@ -22,6 +22,11 @@ Route::get('/home', 'HomeController@index');
 
 //Rutas para dependencias
 
+Route::get('admin/apiRest/dependencias',[
+    'uses' => 'DependenciasApiController@index',
+    'as' => 'admin.dependencias_api.index'
+]);
+
 Route::get('/dependencias', function () {
     return view('admin.dependencias.index');
 });
