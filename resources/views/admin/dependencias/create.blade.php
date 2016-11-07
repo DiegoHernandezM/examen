@@ -5,7 +5,7 @@
         <div class="page-header">
             <h1>
                 
-                Dependencias <small>[Agregar dependencia]</small>
+                Dependencias <small>Agregar dependencia</small>
             </h1>
         </div>
 

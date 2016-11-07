@@ -5,7 +5,7 @@
         <div class="page-header">
             <h1>
                 
-                Auroridades <small>Agregar dependencia</small>
+                Auroridades Agregar autoridad
             </h1>
         </div>
 

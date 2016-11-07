@@ -39,10 +39,11 @@ class AutoridadesController extends Controller
         return redirect()->route('admin.autoridades.index');
     }    
 
-     public function show(Autoridades $autoridad)
+     public function show(Autoridades $autoridades)
     {
-    	$autoridad = Autoridades::all();
-        return redirect()->route('admin.autoridades.index', compact('autoridad'));
+        return $autoridades;
+    	//$autoridades = Autoridades::all();
+        //return redirect()->route('admin.autoridades.index', compact('autoridades'));
     }
     public function edit(Autoridades $autoridades)
     {
