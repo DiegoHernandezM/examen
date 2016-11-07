@@ -22,11 +22,19 @@
             <tbody>
            
                 <tr>
-                    <td>admin/apiRest/dependencias</td>
+                    <td>dependencia</td>
                     <td>NINGUNO</td>
                     <td>GET</td>
                     <td>JSON</td>
                     <td>Trae todos los registros de la DB</td>
+                    
+                </tr>
+                 <tr>
+                    <td>dependencia/{uuid}/</td>
+                    <td>uuid (texto)</td>
+                    <td>GET</td>
+                    <td>JSON</td>
+                    <td>Trae el registro asociado al parametro de dependencia</td>
                     
                 </tr>
             </tbody>

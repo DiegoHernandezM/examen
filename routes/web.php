@@ -22,11 +22,6 @@ Route::get('/home', 'HomeController@index');
 
 //Rutas para dependencias
 
-Route::get('admin/apiRest/dependencias',[
-    'uses' => 'DependenciasApiController@index',
-    'as' => 'admin.dependencias_api.index'
-]);
-
 Route::get('/dependencias', function () {
     return view('admin.dependencias.index');
 });
@@ -34,6 +29,16 @@ Route::get('/dependencias', function () {
 Route::bind('dependencia', function($dependencias){
     return App\Dependencias::find($dependencias);
 });
+
+Route::get('dependencia',[
+    'uses' => 'DependenciasApiController@index',
+    'as' => 'admin.dependencias_api.index'
+]);
+
+Route::get('/dependencia/{uuid}/',[
+    'uses' => 'DependenciasApiController@getindex',
+    'as' => 'admin.dependencias_api.index'
+]);
 
 Route::resource('admin/dependencias', 'DependenciasController');
 

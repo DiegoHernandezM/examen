@@ -14,4 +14,12 @@ class DependenciasApiController extends Controller
     			'dependencias' => $dependencias
     		]);
     }
+    
+    public function getindex($uuid){  
+    	$dependencias=Dependencias::where('uuid',$uuid)->get();
+
+    	return response()->json([
+    			'dependencias' => $dependencias 
+    		]);
+    }
 }
